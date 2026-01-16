@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow: hidden;
+}
+
+.wrapper {
+  perspective: 1200px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 0 0 15px #00ffff66;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+}
+
+.box {
+  position: relative;
+  width: 28rem;
+  height: 38rem;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.box.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 40rem;
+  padding: 2.5rem;
+  border-radius: 25px;
+  background: rgba(20, 20, 40, 0.9);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1),
+              inset 0 0 30px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: 0.6s;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+form:hover {
+  box-shadow: 0 0 25px cyan, inset 0 0 25px cyan;
+  border: 2px solid cyan;
+}
+
+form:hover h1 {
+  color: cyan;
+  text-shadow: 0 0 20px cyan;
+}
+
+.inputBox {
+  position: relative;
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 12px 45px 12px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.4s;
+}
+
+.inputBox input:focus {
+  box-shadow: 0 0 10px cyan, inset 0 0 10px cyan;
+}
+
+.inputBox i {
+  position: absolute;
+  left: 10px;
+  color: cyan;
+  font-size: 1.3rem;
+}
+
+.inputBox img {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px cyan);
+  transition: 0.3s;
+}
+
+.inputBox img:hover {
+  transform: scale(1.1);
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+.forgot-pass a {
+  display: inline-block;
+  margin: 0.5rem 0;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+form:hover .forgot-pass a {
+  color: cyan;
+  text-shadow: 0 0 8px cyan;
+}
+
+button {
+  margin: 1rem auto;
+  padding: 12px 35px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, cyan, #00e5ff);
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px cyan;
+  color: white;
+}
+
+.register-link p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: cyan;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.register-link a:hover {
+  text-shadow: 0 0 8px cyan;
+}
+
+p1 {
+  display: block;
+  margin: 1rem 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.login-with {
+  margin-top: 0.5rem;
+}
+
+.login-with h5 {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #bbb;
+}
+
+.google i,
+.facebook i {
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 1.8rem;
+  margin: 0 8px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.google i {
+  color: #e84118;
+}
+
+.facebook i {
+  color: #1877f2;
+}
+
+.google i:hover,
+.facebook i:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px cyan;
+}
+
+@media (max-width: 500px) {
+  .box {
+    width: 22rem;
+    height: 35rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  .inputBox input {
+    font-size: 0.9rem;
+  }
+}
